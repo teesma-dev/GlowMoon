@@ -11,7 +11,9 @@ import SwiftUI
 struct GlowMoonApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                OnboardingWelcomeView()
+            }
         }
     }
 }
