@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeDashboardView: View {
+    @Binding var selectedTab: String
     let primaryPink = Color(hex: "e91e8c")
     let backgroundPink = Color(hex: "FFF6F7")
     
@@ -23,7 +24,7 @@ struct HomeDashboardView: View {
                             .foregroundColor(.gray)
                         HStack {
                             Text("Teeshma")
-                                .font(.system(size: 32, weight: .bold, design: .rounded))
+                                .font(.system(size: 32, weight: .bold))
                             Spacer()
                         }
                         Text("Wednesday, April 9")
@@ -52,7 +53,7 @@ struct HomeDashboardView: View {
                             
                             VStack(spacing: 4) {
                                 Text("Day").font(.subheadline).foregroundColor(.gray)
-                                Text("14").font(.system(size: 60, weight: .bold, design: .rounded))
+                                Text("14").font(.system(size: 40, weight: .bold))
                                 Text("Ovulation Day").font(.subheadline).fontWeight(.medium).foregroundColor(primaryPink)
                             }
                         }
@@ -135,7 +136,7 @@ struct HomeDashboardView: View {
             }
             
             VStack(spacing: 0) {
-                CustomTabBar(primaryPink: primaryPink)
+                CustomTabBar(selectedTab: $selectedTab, primaryPink: primaryPink)
                     .background(Color.white)
                     .padding(.bottom, 0)
             }
@@ -168,13 +169,25 @@ struct QuickLogItem: View {
 }
 
 struct CustomTabBar: View {
+    @Binding var selectedTab: String
     let primaryPink: Color
     
     var body: some View {
         HStack(alignment: .bottom, spacing: 0) {
-            TabItem(icon: "house", label: "Home", isSelected: true, color: primaryPink)
-            TabItem(icon: "calendar", label: "Calendar", isSelected: false, color: primaryPink)
-            Button(action: {}) {
+            
+            TabItem(icon: "house.fill",
+                    label: "Home",
+                    isSelected: selectedTab == "Home",
+                    color: primaryPink)
+                .onTapGesture { selectedTab = "Home" }
+            
+            TabItem(icon: "calendar",
+                    label: "Calendar",
+                    isSelected: selectedTab == "Calendar",
+                    color: primaryPink)
+                .onTapGesture { selectedTab = "Calendar" }
+            
+            Button(action: { print("Log tapped") }) {
                 VStack(spacing: 4) {
                     Image(systemName: "plus")
                         .font(.system(size: 20, weight: .bold))
@@ -186,11 +199,26 @@ struct CustomTabBar: View {
                 }
             }
             .frame(maxWidth: .infinity)
-            TabItem(icon: "circle.circle", label: "Insights", isSelected: false, color: primaryPink)
-            TabItem(icon: "gearshape", label: "Settings", isSelected: false, color: primaryPink)
+            
+            TabItem(icon: "circle.circle",
+                    label: "Insights",
+                    isSelected: selectedTab == "Insights",
+                    color: primaryPink)
+                .onTapGesture { selectedTab = "Insights" }
+            
+            TabItem(icon: "gearshape",
+                    label: "Settings",
+                    isSelected: selectedTab == "Settings",
+                    color: primaryPink)
+                .onTapGesture { selectedTab = "Settings" }
         }
         .padding(.horizontal, 10)
-        .frame(height: 60)
+        .frame(height: 75)
+        .background(
+            Color.white
+                .shadow(color: .black.opacity(0.05), radius: 10, y: -5)
+                .ignoresSafeArea(edges: .bottom)
+        )
     }
 }
 
@@ -208,6 +236,6 @@ struct TabItem: View {
                 .font(.caption2)
         }
         .frame(maxWidth: .infinity)
-        .foregroundColor(isSelected ? color : .gray)
+        .foregroundColor(isSelected ? color : .gray.opacity(0.5))
     }
 }

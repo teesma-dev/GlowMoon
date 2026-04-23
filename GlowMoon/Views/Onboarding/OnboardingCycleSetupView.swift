@@ -11,6 +11,7 @@ struct OnboardingCycleSetupView: View {
     @State private var lastPeriodDate = Date()
     @State private var cycleLength = 28
     @State private var navigateToHome = false
+    @AppStorage("hasCompletedOnboarding") var hasCompletedOnboarding: Bool = false
     
     let primaryPink = Color(hex: "e91e8c")
     
@@ -18,7 +19,7 @@ struct OnboardingCycleSetupView: View {
         VStack(spacing: 0) {
             VStack(alignment: .leading, spacing: 12) {
                 Text("When did your last period start?")
-                    .font(.system(size: 22, weight: .bold, design: .rounded))
+                    .font(.system(size: 22, weight: .bold))
                     .foregroundStyle(Color(hex: "1A1A2E"))
                 
                 Text("This helps us predict your cycle accurately")
@@ -53,7 +54,7 @@ struct OnboardingCycleSetupView: View {
                     
                     HStack(alignment: .center, spacing: 18) {
                         Text("\(cycleLength)")
-                            .font(.system(size: 22, weight: .bold, design: .rounded))
+                            .font(.system(size: 22, weight: .bold))
                         Text("days")
                             .font(.body)
                             .foregroundStyle(.gray)
@@ -79,18 +80,15 @@ struct OnboardingCycleSetupView: View {
             
             VStack(spacing: 16) {
                 Button(action: {
-                    navigateToHome = true
+                    hasCompletedOnboarding = true
                 }) {
-                    Text("Next")
+                    Text("Get Started")
                         .font(.headline)
                         .foregroundStyle(.white)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 18)
                         .background(primaryPink)
                         .cornerRadius(15)
-                }
-                .navigationDestination(isPresented: $navigateToHome) {
-                    HomeDashboardView()
                 }
                 Button(action: {
                 }) {

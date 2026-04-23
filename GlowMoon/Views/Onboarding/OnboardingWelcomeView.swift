@@ -39,7 +39,7 @@ struct OnboardingWelcomeView: View {
                 
                 VStack(spacing: 16) {
                     Text("Glow Moon")
-                        .font(.system(size: 34, weight: .bold, design: .rounded))
+                        .font(.system(size: 34, weight: .bold))
                         .foregroundColor(Color(hex: "1A1A2E"))
                     
                     Text("Your cycle, your rhythm")
@@ -60,7 +60,7 @@ struct OnboardingWelcomeView: View {
                     Button(action: {
                         showSetup = true
                     }) {
-                        Text("Get Started")
+                        Text("Next")
                             .font(.headline)
                             .foregroundStyle(.white)
                             .frame(maxWidth: .infinity)

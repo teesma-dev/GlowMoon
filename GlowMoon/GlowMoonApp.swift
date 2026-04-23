@@ -9,10 +9,16 @@ import SwiftUI
 
 @main
 struct GlowMoonApp: App {
+    @AppStorage("hasCompletedOnboarding") var hasCompletedOnboarding: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                OnboardingWelcomeView()
+            if hasCompletedOnboarding {
+                MainTabView()
+            } else {
+                NavigationStack {
+                    OnboardingWelcomeView()
+                }
             }
         }
     }
