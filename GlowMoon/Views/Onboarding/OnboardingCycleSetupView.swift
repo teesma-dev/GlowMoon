@@ -10,6 +10,7 @@ import SwiftUI
 struct OnboardingCycleSetupView: View {
     @State private var lastPeriodDate = Date()
     @State private var cycleLength = 28
+    @State private var navigateToHome = false
     
     let primaryPink = Color(hex: "e91e8c")
     
@@ -78,7 +79,7 @@ struct OnboardingCycleSetupView: View {
             
             VStack(spacing: 16) {
                 Button(action: {
-                    // Navigate to next screen
+                    navigateToHome = true
                 }) {
                     Text("Next")
                         .font(.headline)
@@ -88,7 +89,9 @@ struct OnboardingCycleSetupView: View {
                         .background(primaryPink)
                         .cornerRadius(15)
                 }
-                
+                .navigationDestination(isPresented: $navigateToHome) {
+                    HomeDashboardView()
+                }
                 Button(action: {
                 }) {
                     Text("I'm not sure, skip for now")
