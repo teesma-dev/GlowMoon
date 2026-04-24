@@ -187,15 +187,16 @@ struct CustomTabBar: View {
                     color: primaryPink)
                 .onTapGesture { selectedTab = "Calendar" }
             
-            Button(action: { print("Log tapped") }) {
+            Button(action: {
+                selectedTab = "Log"
+            }) {
                 VStack(spacing: 4) {
                     Image(systemName: "plus")
                         .font(.system(size: 20, weight: .bold))
-                        .foregroundColor(.pink)
-                        .frame(width: 20, height: 20)
+                        .foregroundColor(selectedTab == "Log" ? primaryPink : .pink)
                     Text("Log")
                         .font(.system(size: 11, weight: .medium))
-                        .foregroundColor(.gray)
+                        .foregroundColor(selectedTab == "Log" ? .black : .gray)
                 }
             }
             .frame(maxWidth: .infinity)

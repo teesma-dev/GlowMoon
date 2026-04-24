@@ -18,15 +18,18 @@ struct MainTabView: View {
                     HomeDashboardView(selectedTab: $selectedTab)
                 } else if selectedTab == "Calendar" {
                     CalendarView()
+                } else if selectedTab == "Log" {
+                    LogEntryView()
                 } else {
                     Text("\(selectedTab) View")
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .background(Color(hex: "FFF6F7"))
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             
             CustomTabBar(selectedTab: $selectedTab, primaryPink: primaryPink)
         }
-        .ignoresSafeArea(.keyboard) 
+        .ignoresSafeArea(.keyboard)
     }
 }

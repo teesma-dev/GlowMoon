@@ -114,9 +114,6 @@ struct CalendarView: View {
                         
                         HStack {
                             Spacer()
-                            Button("Edit Log →") { }
-                                .font(.subheadline.bold())
-                                .foregroundColor(primaryPink)
                         }
                     }
                     .padding(20)
