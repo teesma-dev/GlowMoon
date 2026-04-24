@@ -20,6 +20,8 @@ struct MainTabView: View {
                     CalendarView()
                 } else if selectedTab == "Log" {
                     LogEntryView()
+                } else if selectedTab == "Insights"{
+                    InsightsView()
                 } else {
                     Text("\(selectedTab) View")
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
