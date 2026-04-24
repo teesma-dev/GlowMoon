@@ -22,6 +22,8 @@ struct MainTabView: View {
                     LogEntryView()
                 } else if selectedTab == "Insights"{
                     InsightsView()
+                } else if selectedTab == "Settings" {
+                    SettingsView()
                 } else {
                     Text("\(selectedTab) View")
                         .frame(maxWidth: .infinity, maxHeight: .infinity)

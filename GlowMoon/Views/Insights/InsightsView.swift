@@ -21,6 +21,22 @@ struct InsightsView: View {
         .init(month: "Apr", length: 20)
     ]
     
+    let stats: [StatItem] = [
+        StatItem(value: "28", unit: "days", label: "Cycle Length"),
+        StatItem(value: "5", unit: "days", label: "Period Length"),
+        StatItem(value: "92%", unit: "", label: "Regularity")
+    ]
+    
+    var symptomsData: [SymptomInsight] {
+        [
+            SymptomInsight(name: "Cramps", percentage: 0.83, color: primaryPink),
+            SymptomInsight(name: "Headache", percentage: 0.67, color: .purple),
+            SymptomInsight(name: "Bloating", percentage: 0.50, color: Color(hex: "FF85B2")),
+            SymptomInsight(name: "Fatigue", percentage: 0.33, color: Color(hex: "9D8AF2")),
+            SymptomInsight(name: "Acne", percentage: 0.17, color: primaryPink.opacity(0.4))
+        ]
+    }
+    
     var body: some View {
         ZStack {
             backgroundPink.ignoresSafeArea()
@@ -33,9 +49,9 @@ struct InsightsView: View {
                         .padding(.top, 10)
                     
                     HStack(spacing: 12) {
-                        StatCard(value: "28", unit: "days", color: primaryPink)
-                        StatCard(value: "5", unit: "days", color: primaryPink)
-                        StatCard(value: "92%", unit: "", color: primaryPink)
+                        ForEach(stats) { stat in
+                            StatCard(item: stat, color: primaryPink)
+                        }
                     }
                     
                     VStack(alignment: .leading, spacing: 20) {
@@ -96,11 +112,9 @@ struct InsightsView: View {
                     VStack(alignment: .leading, spacing: 16) {
                         Text("Top Symptoms").font(.headline)
                         
-                        SymptomRow(name: "Cramps", percentage: 0.83, color: primaryPink)
-                        SymptomRow(name: "Headache", percentage: 0.67, color: .purple)
-                        SymptomRow(name: "Bloating", percentage: 0.50, color: .init(hex: "FF85B2"))
-                        SymptomRow(name: "Fatigue", percentage: 0.33, color: .init(hex: "9D8AF2"))
-                        SymptomRow(name: "Acne", percentage: 0.17, color: primaryPink.opacity(0.4))
+                        ForEach(symptomsData) { item in
+                            SymptomRow(symptom: item)
+                        }
                     }
                     .padding(20)
                     .background(Color.white)
@@ -109,60 +123,6 @@ struct InsightsView: View {
                 .padding(.horizontal, 24)
                 .padding(.bottom, 100)
             }
-        }
-    }
-}
-
-struct StatCard: View {
-    let value: String
-    let unit: String
-    let color: Color
-    
-    var body: some View {
-        VStack(spacing: 4) {
-            HStack(alignment: .firstTextBaseline, spacing: 2) {
-                Text(value)
-                    .font(.system(size: 28, weight: .bold))
-                    .foregroundColor(color)
-                Text(unit)
-                    .font(.caption)
-                    .foregroundColor(.gray)
-            }
-        }
-        .frame(maxWidth: .infinity)
-        .frame(height: 100)
-        .background(Color.white)
-        .cornerRadius(20)
-    }
-}
-
-struct SymptomRow: View {
-    let name: String
-    let percentage: Double
-    let color: Color
-    
-    var body: some View {
-        HStack {
-            Text(name)
-                .font(.subheadline)
-                .frame(width: 80, alignment: .leading)
-            
-            GeometryReader { geo in
-                ZStack(alignment: .leading) {
-                    Capsule()
-                        .fill(Color.gray.opacity(0.1))
-                        .frame(height: 12)
-                    Capsule()
-                        .fill(color)
-                        .frame(width: geo.size.width * percentage, height: 12)
-                }
-            }
-            .frame(height: 12)
-            
-            Text("\(Int(percentage * 100))%")
-                .font(.caption)
-                .foregroundColor(.gray)
-                .frame(width: 35, alignment: .trailing)
         }
     }
 }

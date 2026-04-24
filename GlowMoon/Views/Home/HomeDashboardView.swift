@@ -12,6 +12,12 @@ struct HomeDashboardView: View {
     let primaryPink = Color(hex: "e91e8c")
     let backgroundPink = Color(hex: "FFF6F7")
     
+    let logCategories = [
+        QuickLogCategory(title: "Mood", color: Color(hex: "fbcfe7"), icon: "face.smiling"),
+        QuickLogCategory(title: "Symptoms", color: Color(hex: "baf8d0"), icon: "pills"),
+        QuickLogCategory(title: "Notes", color: Color(hex: "e0e6ff"), icon: "pencil")
+    ]
+    
     var body: some View {
         ZStack(alignment: .bottom) {
             backgroundPink
@@ -104,9 +110,9 @@ struct HomeDashboardView: View {
                             .padding(.horizontal, 24)
                         
                         HStack(spacing: 16) {
-                            QuickLogItem(title: "Mood", color: Color(hex: "fbcfe7"))
-                            QuickLogItem(title: "Symptoms", color: Color(hex: "baf8d0"))
-                            QuickLogItem(title: "Notes", color: Color(hex: "e0e6ff"))
+                            ForEach(logCategories) { category in
+                                QuickLogItem(category: category)
+                            }
                         }
                         .padding(.horizontal, 24)
                     }
@@ -144,44 +150,5 @@ struct HomeDashboardView: View {
             .shadow(color: .black.opacity(0.05), radius: 10, y: -5)
         }
         .navigationBarBackButtonHidden(true)
-    }
-}
-
-struct QuickLogItem: View {
-    let title: String
-    let color: Color
-    
-    var body: some View {
-        VStack(spacing: 12) {
-            Circle()
-                .fill(color)
-                .frame(width: 50, height: 50)
-            
-            Text(title)
-                .font(.footnote)
-                .foregroundColor(.black)
-        }
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, 16)
-        .background(Color.white)
-        .cornerRadius(20)
-    }
-}
-
-struct TabItem: View {
-    let icon: String
-    let label: String
-    let isSelected: Bool
-    let color: Color
-    
-    var body: some View {
-        VStack(spacing: 4) {
-            Image(systemName: icon)
-                .font(.system(size: 20))
-            Text(label)
-                .font(.caption2)
-        }
-        .frame(maxWidth: .infinity)
-        .foregroundColor(isSelected ? color : .gray.opacity(0.5))
     }
 }

@@ -69,10 +69,14 @@ struct CalendarView: View {
                         LazyVGrid(columns: columns, spacing: 15) {
                             ForEach(0..<3, id: \.self) { _ in Text("") }
                             
-                            ForEach(1...30, id: \.self) { day in
-                                CalendarDayView(day: day,
-                                               status: getStatus(for: day),
-                                               isToday: day == 9)
+                            ForEach(1...30, id: \.self) { dayNumber in
+                                let status = getStatus(for: dayNumber)
+                                let dayModel = CalendarDay(
+                                    dayNumber: dayNumber,
+                                    status: status,
+                                    isToday: dayNumber == 9
+                                )
+                                CalendarDayView(item: dayModel)
                             }
                         }
                     }
@@ -147,70 +151,5 @@ struct CalendarView: View {
         if day == 14 { return .ovulation }
         if (23...25).contains(day) { return .pms }
         return .none
-    }
-}
-
-enum DayStatus {
-    case period, fertile, ovulation, pms, today, none
-}
-
-struct CalendarDayView: View {
-    let day: Int
-    let status: DayStatus
-    let isToday: Bool
-    
-    var body: some View {
-        Text("\(day)")
-            .font(.system(size: 16, weight: .semibold))
-            .foregroundColor(textColor)
-            .frame(width: 36, height: 36)
-            .background(backgroundColor)
-            .clipShape(Circle())
-            .overlay(
-                Circle()
-                    .stroke(isToday ? Color(hex: "e91e8c") : Color.clear, lineWidth: 2)
-            )
-    }
-    
-    var backgroundColor: Color {
-        switch status {
-        case .period: return Color(hex: "E55B5B")
-        case .fertile: return Color(hex: "A8E6CF")
-        case .ovulation: return Color(hex: "56C568")
-        case .pms: return Color(hex: "E18AAA")
-        default: return Color.clear
-        }
-    }
-    
-    var textColor: Color {
-        status == .none || status == .today ? .black : .white
-    }
-}
-
-struct LegendItem: View {
-    let color: Color
-    let label: String
-    var body: some View {
-        HStack(spacing: 4) {
-            Circle().fill(color).frame(width: 8, height: 8)
-            Text(label).foregroundColor(.gray)
-        }
-    }
-}
-
-struct UpcomingRow: View {
-    let color: Color
-    let title: String
-    let date: String
-    var body: some View {
-        HStack {
-            Circle().fill(color).frame(width: 10, height: 10)
-            Text(title).font(.subheadline)
-            Spacer()
-            Text(date).font(.subheadline).foregroundColor(.gray)
-        }
-        .padding()
-        .background(Color.white)
-        .cornerRadius(15)
     }
 }
