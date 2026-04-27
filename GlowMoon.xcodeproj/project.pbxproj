@@ -29,12 +29,81 @@
 		491C79362F986C2500ED47C1 /* GlowMoonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlowMoonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		491C791E2F986C2300ED47C1 /* GlowMoon */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = GlowMoon;
-			sourceTree = "<group>";
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		4927F6712F9EA3D400C0BEB3 /* Exceptions for "GlowMoon" folder in "GlowMoon" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets.xcassets,
+				ContentView.swift,
+				"Extensions/Image+Assets.swift",
+				Extensions/ShareSheet.swift,
+				"Extensions/View+Extensions.swift",
+				GlowMoonApp.swift,
+				Models/CalendarModel.swift,
+				Models/HomeModel.swift,
+				Models/InsightsModel.swift,
+				Models/LogModels.swift,
+				Models/SettingsModel.swift,
+				"Preview Content/Preview Assets.xcassets",
+				Utilities/Constants.swift,
+				Views/Calendar/CalendarDayView.swift,
+				Views/Calendar/CalendarView.swift,
+				Views/Home/HomeDashboardView.swift,
+				Views/Home/QuickLogItem.swift,
+				Views/Insights/InsightsView.swift,
+				Views/Insights/SymptomRow.swift,
+				Views/Logs/LogComponents.swift,
+				Views/Logs/LogEntryView.swift,
+				Views/Main/CustomTabBar.swift,
+				Views/Main/MainTabView.swift,
+				Views/Onboarding/OnboardingCycleSetupView.swift,
+				Views/Onboarding/OnboardingWelcomeView.swift,
+				Views/Settings/SettingsRow.swift,
+				Views/Settings/SettingsSection.swift,
+				Views/Settings/SettingsView.swift,
+				Views/Settings/Subviews/AppearanceView.swift,
+				Views/Settings/Subviews/FirstDayOfWeekView.swift,
+				Views/Settings/Subviews/LanguageView.swift,
+				Views/Settings/Subviews/LegalView.swift,
+				Views/Settings/Subviews/RateAppAlert.swift,
+				Views/Settings/Subviews/ReminderSoundView.swift,
+				Views/Settings/Subviews/StarRatingView.swift,
+			);
+			target = 491C791B2F986C2300ED47C1 /* GlowMoon */;
 		};
+		4927F6722F9EA3D400C0BEB3 /* Exceptions for "GlowMoon" folder in "GlowMoonUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets.xcassets,
+				ContentView.swift,
+				GlowMoonApp.swift,
+				Models/CalendarModel.swift,
+				Models/HomeModel.swift,
+				Models/InsightsModel.swift,
+				Models/LogModels.swift,
+				Models/SettingsModel.swift,
+				"Preview Content/Preview Assets.xcassets",
+				Views/Calendar/CalendarDayView.swift,
+				Views/Calendar/CalendarView.swift,
+				Views/Home/HomeDashboardView.swift,
+				Views/Home/QuickLogItem.swift,
+				Views/Insights/InsightsView.swift,
+				Views/Insights/SymptomRow.swift,
+				Views/Logs/LogComponents.swift,
+				Views/Logs/LogEntryView.swift,
+				Views/Main/CustomTabBar.swift,
+				Views/Main/MainTabView.swift,
+				Views/Onboarding/OnboardingCycleSetupView.swift,
+				Views/Onboarding/OnboardingWelcomeView.swift,
+				Views/Settings/SettingsRow.swift,
+				Views/Settings/SettingsSection.swift,
+				Views/Settings/SettingsView.swift,
+			);
+			target = 491C79352F986C2500ED47C1 /* GlowMoonUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
 		491C792F2F986C2500ED47C1 /* GlowMoonTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = GlowMoonTests;
@@ -43,6 +112,15 @@
 		491C79392F986C2500ED47C1 /* GlowMoonUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = GlowMoonUITests;
+			sourceTree = "<group>";
+		};
+		4927F6582F9EA3D400C0BEB3 /* GlowMoon */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4927F6712F9EA3D400C0BEB3 /* Exceptions for "GlowMoon" folder in "GlowMoon" target */,
+				4927F6722F9EA3D400C0BEB3 /* Exceptions for "GlowMoon" folder in "GlowMoonUITests" target */,
+			);
+			path = GlowMoon;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,7 +153,7 @@
 		491C79132F986C2300ED47C1 = {
 			isa = PBXGroup;
 			children = (
-				491C791E2F986C2300ED47C1 /* GlowMoon */,
+				4927F6582F9EA3D400C0BEB3 /* GlowMoon */,
 				491C792F2F986C2500ED47C1 /* GlowMoonTests */,
 				491C79392F986C2500ED47C1 /* GlowMoonUITests */,
 				491C791D2F986C2300ED47C1 /* Products */,
@@ -106,9 +184,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				491C791E2F986C2300ED47C1 /* GlowMoon */,
 			);
 			name = GlowMoon;
 			packageProductDependencies = (
@@ -155,6 +230,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				491C79392F986C2500ED47C1 /* GlowMoonUITests */,
+				4927F6582F9EA3D400C0BEB3 /* GlowMoon */,
 			);
 			name = GlowMoonUITests;
 			packageProductDependencies = (

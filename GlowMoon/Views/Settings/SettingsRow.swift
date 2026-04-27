@@ -8,34 +8,43 @@
 import SwiftUI
 
 struct SettingsRow: View {
-    let item: SettingsItem
+    let item: SettingItem
+    var showChevron: Bool = true
     
     var body: some View {
-        Button(action: {  }) {
-            HStack(spacing: 16) {
-                Image(systemName: item.icon)
-                    .font(.system(size: 18))
-                    .foregroundColor(item.iconColor)
-                    .frame(width: 30)
-                
-                Text(item.title)
-                    .foregroundColor(item.isDestructive ? .red : .primary)
-                    .font(.body)
-                
-                Spacer()
-                
-                if let value = item.value {
-                    Text(value)
-                        .foregroundColor(.gray)
-                        .font(.subheadline)
+        HStack(spacing: 16) {
+            item.icon
+                .resizable()
+                .scaledToFit()
+                .frame(width: 24, height: 24)
+                .foregroundStyle(item.isDestructive ? .red : .primary)
+            
+            Text(item.title)
+                .font(.body)
+                .foregroundStyle(item.isDestructive ? .red : .primary)
+            
+            Spacer()
+            
+            switch item.type {
+            case .navigation:
+                HStack(spacing: 8) {
+                    if let detail = item.detailText {
+                        Text(detail)
+                            .font(.subheadline)
+                            .foregroundStyle(.gray)
+                    }
+                    if showChevron {
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 14, weight: .semibold))
+                            .foregroundStyle(.gray.opacity(0.5))
+                    }
                 }
-                
-                Image(systemName: "chevron.right")
-                    .font(.system(size: 14, weight: .semibold))
-                    .foregroundColor(.gray.opacity(0.4))
+            case .toggle(let binding):
+                Toggle("", isOn: binding)
+                    .tint(Color(hex: "e91e8c"))
+                    .labelsHidden()
             }
-            .padding(.vertical, 18)
-            .padding(.horizontal, 16)
         }
+        .padding(.vertical, 4)
     }
 }
