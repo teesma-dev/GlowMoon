@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="images/screenshot-welcome.png" width="120" alt="Glow Moon Icon" />
+<img src="docs/images/GlowMoon_AppIcon_1024.png" width="120" alt="Glow Moon Icon" />
 
 # 🌙 Glow Moon
 
