@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy · World Clock Live</title>
+  <meta name="description" content="Privacy policy for Glow Moon — a iOS app that does not collect, store, or transmit any personal data."/>
+  <link rel="canonical" href="https://teesma-dev.github.io/GlowMoon/privacy/"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0f;
+      --surface: #141417;
+      --surface2: #1c1c21;
+      --border: rgba(255,255,255,0.08);
+      --text: #f0efe8;
+      --muted: #888;
+      --accent1: #f4a261;
+      --accent2: #e76f51;
+      --accent3: #48cae4;
+      --accent5: #c77dff;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 72px 24px 48px;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 30%, rgba(244,162,97,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 80% 70%, rgba(72,202,228,0.10) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 50% at 50% 10%, rgba(199,125,255,0.09) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero > * { position: relative; }
+
+    .app-icon-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 22px;
+    }
+    .app-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 8px 40px rgba(72,202,228,0.25), 0 2px 8px rgba(0,0,0,0.5);
+      overflow: hidden;
+      display: block;
+    }
+    .app-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent3);
+      border: 1px solid rgba(72,202,228,0.3);
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      line-height: 1.1;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      background: linear-gradient(120deg, var(--accent1), var(--accent2), var(--accent5));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .effective {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .effective strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ── CONTENT ── */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    .summary-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 26px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .summary-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent3), #a8dadc);
+      border-radius: 16px 16px 0 0;
+    }
+    .summary-card p {
+      font-size: 15px;
+      color: var(--text);
+      font-weight: 400;
+    }
+    .summary-card p strong {
+      font-weight: 600;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+    .section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .section p,
+    .section li {
+      font-size: 15px;
+      color: var(--muted);
+      font-weight: 300;
+    }
+    .section p + p {
+      margin-top: 12px;
+    }
+    .section ul {
+      margin-top: 12px;
+      padding-left: 20px;
+    }
+    .section li + li {
+      margin-top: 8px;
+    }
+    .section a {
+      color: var(--accent3);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(72,202,228,0.3);
+    }
+    .section a:hover {
+      color: #7adcef;
+      border-bottom-color: var(--accent3);
+    }
+    .section .lede {
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin-top: 16px;
+    }
+    .contact-card a {
+      display: inline-block;
+      margin-right: 18px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px 48px;
+      font-size: 12px;
+      color: #444;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: #555; text-decoration: none; }
+    footer a:hover { color: #888; }
+
+    @media (max-width: 480px) {
+      .summary-card,
+      .contact-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <a href="../" class="app-icon-wrap" aria-label="Back to World Clock Live home">
+      <div class="app-icon">
+        <img src="../images/GlowMoon_AppIcon_1024.png" alt="GlowMoon App Icon">
+      </div>
+    </a>
+    <div class="badge">Privacy Policy</div>
+    <h1>Your data, <em>not ours</em></h1>
+    <p class="effective"><strong>Effective date:</strong> 5 May 2026</p>
+  </section>
+
+  <div class="container">
+
+    <div class="summary-card">
+      <p><strong>Glow Moon does not collect, store, or transmit any personal data.</strong> The app runs entirely on your Mac — no analytics, no tracking, no third-party services, no network calls.</p>
+    </div>
+
+    <div class="section">
+      <h2>What we collect</h2>
+      <p class="lede">Nothing.</p>
+      <p>This Period Tracker app is designed with privacy in mind. All data you enter, such as cycle information, dates, and preferences, is stored locally on your device. We do not collect, store, or transmit any personal or health-related data to external servers.</p>
+    </div>
+
+    <div class="section">
+      <h2>Third-party services</h2>
+      <p class="lede">None.</p>
+      <p>The app contains no analytics SDKs, advertising libraries, crash reporters, or any other third-party tracking tools.</p>
+    </div>
+
+    <div class="section">
+      <h2>Network access</h2>
+      <p class="lede">The app does not use the network.</p>
+      <p>This Period Tracker app operates entirely offline. All calculations, predictions, and data processing (such as cycle tracking and reminders)are performed locally on your device.</p>
+    </div>
+
+    <div class="section">
+      <h2>Cookies and tracking</h2>
+      <p>We do not track your activity or collect any usage data. All information you enter (such as cycle data and preferences) is stored locally on your device using standard Apple frameworks like <code>UserDefaults</code></p>
+    </div>
+
+    <div class="section">
+      <h2>Children's privacy</h2>
+      <p>This Period Tracker app is designed to respect user privacy for all users. The app does not knowingly collect, store, or share any personal information, including from children.</p>
+    </div>
+
+    <div class="section">
+      <h2>Your rights</h2>
+      <p>Privacy regulations such as the GDPR and the California Consumer Privacy Act (CCPA) grant you rights to access, correct, delete, or export personal data held about you. Because we do not hold any data about you, there is nothing to access, correct, delete, or export. Uninstalling the app removes any locally stored preferences from your device.</p>
+    </div>
+
+    <div class="section">
+      <h2>Changes to this policy</h2>
+      <p>If this policy is ever updated, the revised version will be posted at this same URL with a new effective date. Material changes will also be noted in the app's release notes.</p>
+    </div>
+
+    <div class="section">
+      <h2>Contact</h2>
+      <p>For any questions about this privacy policy or the app, you can reach the developer here:</p>
+      <div class="contact-card">
+        <a href="https://github.com/teesma-dev" target="_blank" rel="noopener">GitHub · @teesma-dev</a>
+        <a href="https://www.linkedin.com/in/teesma-dev/" target="_blank" rel="noopener">LinkedIn · Teesma M</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    Built with care by <a href="https://github.com/teesma-dev" target="_blank">Teesma</a> · Glow Moon ·
+    <a href="../">Home</a> ·
+    <a href="https://github.com/teesma-dev/GlowMoon.git" target="_blank">GitHub</a>
+  </footer>
+
+</body>
+</html>
