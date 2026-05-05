@@ -34,7 +34,7 @@ No subscriptions. No ads. Just clarity.
 
 | Welcome | Setup | Home | Calendar | Log | Insights | Settings |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| <img src="images/screenshot1.png" width="110"/> | <img src="images/screenshot2.png" width="110"/> | <img src="images/screenshot3.png" width="110"/> | <img src="images/screenshot4.png" width="110"/> | <img src="images/screenshot5.png" width="110"/> | <img src="images/screenshot6.png" width="110"/> | <img src="images/screenshot7.png" width="110"/> |
+| <img src="docs/images/screenshot1.png" width="110"/> | <img src="docs/images/screenshot2.png" width="110"/> | <img src="docs/images/screenshot3.png" width="110"/> | <img src="docs/images/screenshot4.png" width="110"/> | <img src="docs/images/screenshot5.png" width="110"/> | <img src="docs/images/screenshot6.png" width="110"/> | <img src="docs/images/screenshot7.png" width="110"/> |
 
 </div>
 
