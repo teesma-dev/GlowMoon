@@ -176,7 +176,7 @@ iOS Developer · Chennai, India 🇮🇳
 *Passionate about building beautiful, purposeful apps that genuinely improve everyday life.*
 
 [![GitHub](https://img.shields.io/badge/GitHub-teesma--dev-181717?style=flat&logo=github)](https://github.com/teesma-dev)
-[![Email](https://img.shields.io/badge/Email-teeshmateeshu%40gmail.com-E91E8C?style=flat&logo=gmail&logoColor=white)](mailto:teesma.dev@gmail.com)
+[![Email](https://img.shields.io/badge/Email-teesma.dev%40gmail.com-E91E8C?style=flat&logo=gmail&logoColor=white)](mailto:teesma.dev@gmail.com)
 
 </div>
 
