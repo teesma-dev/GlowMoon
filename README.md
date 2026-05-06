@@ -29,7 +29,7 @@
 🔮 [Prediction Logic](#-prediction-logic) •
 📄 [License](#-license) •
 ☕ [Support](#-support) •
-👩‍💻 [Developer](#-developer)
+👩‍💻 [Developer](#developer)
 
 </div>
 
@@ -184,7 +184,7 @@ Glow Moon is completely free and open-source. If it helps you understand your bo
 
 ---
 
-## 👩‍💻 Developer
+## Developer
 
 <div align="center">
 
