@@ -18,6 +18,21 @@
 
 </div>
 
+<div align="center">
+
+### 🔗 Contents
+
+✨ [About](#-about) •
+📱 [Screenshots](#-screenshots) •
+🌸 [Features](#-features) •
+🚀 [Getting Started](#-getting-started) •
+🔮 [Prediction Logic](#-prediction-logic) •
+📄 [License](#-license) •
+☕ [Support](#-support) •
+👩‍💻 [Developer](#-developer)
+
+</div>
+
 ---
 
 ## ✨ About
@@ -32,9 +47,13 @@ No subscriptions. No ads. Just clarity.
 
 <div align="center">
 
-| Welcome | Setup | Home | Calendar | Log | Insights | Settings |
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| <img src="docs/images/screenshot1.png" width="110"/> | <img src="docs/images/screenshot2.png" width="110"/> | <img src="docs/images/screenshot3.png" width="110"/> | <img src="docs/images/screenshot4.png" width="110"/> | <img src="docs/images/screenshot5.png" width="110"/> | <img src="docs/images/screenshot6.png" width="110"/> | <img src="docs/images/screenshot7.png" width="110"/> |
+| Welcome | Setup | Home |
+|:-:|:-:|:-:|
+| <img src="docs/images/screenshot1.png" width="180"/> | <img src="docs/images/screenshot2.png" width="180"/> | <img src="docs/images/screenshot3.png" width="180"/> |
+
+| Calendar | Log | Insights | Settings |
+|:-:|:-:|:-:|:-:|
+| <img src="docs/images/screenshot4.png" width="180"/> | <img src="docs/images/screenshot5.png" width="180"/> | <img src="docs/images/screenshot6.png" width="180"/> | <img src="docs/images/screenshot7.png" width="180"/> |
 
 </div>
 
